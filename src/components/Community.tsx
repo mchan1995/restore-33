@@ -1,4 +1,3 @@
-
 import { useRef } from "react";
 import { FadeIn, FadeInStagger } from "./FadeIn";
 import { CtaButton } from "./CtaButton";
@@ -159,7 +158,7 @@ export function Community() {
                   {
                     name: "Breastfeeding Support",
                     members: 1485,
-                    image: "https://images.unsplash.com/photo-1590612281741-bc932d9afee9?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                    image: "/lovable-uploads/28ec62ae-ff02-44e1-9bcc-69501920ba10.png"
                   },
                   {
                     name: "Mom Mental Health",
