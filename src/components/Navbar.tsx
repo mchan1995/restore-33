@@ -4,10 +4,12 @@ import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
 import { useHasScrolled } from "@/lib/animations";
 import { CtaButton } from "./CtaButton";
+import { Link, useLocation } from "react-router-dom";
 
 export function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const hasScrolled = useHasScrolled(20);
+  const location = useLocation();
 
   // Close the menu when pressing escape
   useEffect(() => {
@@ -31,12 +33,22 @@ export function Navbar() {
   }, [isMenuOpen]);
 
   const navItems = [
-    { name: "Home", href: "#" },
-    { name: "Assessments", href: "#assessment" },
-    { name: "Therapy Plans", href: "#therapy" },
-    { name: "Community", href: "#community" },
-    { name: "Resources", href: "#resources" },
+    { name: "Home", href: "/" },
+    { name: "Assessments", href: "/#assessment" },
+    { name: "Therapy Plans", href: "/therapy" },
+    { name: "Community", href: "/community" },
+    { name: "Resources", href: "/resources" },
   ];
+
+  const isActive = (path: string) => {
+    if (path === '/') {
+      return location.pathname === '/';
+    }
+    if (path.startsWith('/#')) {
+      return location.pathname === '/' && location.hash === path.substring(1);
+    }
+    return location.pathname === path;
+  };
 
   return (
     <header
@@ -51,26 +63,42 @@ export function Navbar() {
         <nav className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <a href="#" className="flex items-center gap-2">
+            <Link to="/" className="flex items-center gap-2">
               <div className="w-8 h-8 rounded-full bg-brand-500 flex items-center justify-center">
                 <span className="text-white font-bold">R</span>
               </div>
               <span className="text-neutral-900 font-display text-xl font-semibold">
                 ReStore
               </span>
-            </a>
+            </Link>
           </div>
 
           {/* Desktop Menu */}
           <div className="hidden md:flex md:items-center md:gap-6">
             {navItems.map((item) => (
-              <a
-                key={item.name}
-                href={item.href}
-                className="text-neutral-700 hover:text-brand-600 text-sm font-medium transition-colors link-underline py-1"
-              >
-                {item.name}
-              </a>
+              item.href.startsWith('/#') ? (
+                <a
+                  key={item.name}
+                  href={item.href}
+                  className={cn(
+                    "text-neutral-700 hover:text-brand-600 text-sm font-medium transition-colors link-underline py-1",
+                    isActive(item.href) && "text-brand-600 font-semibold"
+                  )}
+                >
+                  {item.name}
+                </a>
+              ) : (
+                <Link
+                  key={item.name}
+                  to={item.href}
+                  className={cn(
+                    "text-neutral-700 hover:text-brand-600 text-sm font-medium transition-colors link-underline py-1",
+                    isActive(item.href) && "text-brand-600 font-semibold"
+                  )}
+                >
+                  {item.name}
+                </Link>
+              )
             ))}
           </div>
 
@@ -111,14 +139,31 @@ export function Navbar() {
         <nav className="h-full p-4 pt-8 flex flex-col">
           <div className="space-y-6">
             {navItems.map((item) => (
-              <a
-                key={item.name}
-                href={item.href}
-                className="block text-neutral-900 text-xl font-medium hover:text-brand-600 transition-colors"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                {item.name}
-              </a>
+              item.href.startsWith('/#') ? (
+                <a
+                  key={item.name}
+                  href={item.href}
+                  className={cn(
+                    "block text-neutral-900 text-xl font-medium hover:text-brand-600 transition-colors",
+                    isActive(item.href) && "text-brand-600 font-semibold"
+                  )}
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {item.name}
+                </a>
+              ) : (
+                <Link
+                  key={item.name}
+                  to={item.href}
+                  className={cn(
+                    "block text-neutral-900 text-xl font-medium hover:text-brand-600 transition-colors",
+                    isActive(item.href) && "text-brand-600 font-semibold"
+                  )}
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {item.name}
+                </Link>
+              )
             ))}
           </div>
           <div className="mt-auto pt-8">
