@@ -4,7 +4,7 @@ import { Navbar } from "@/components/Navbar";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Card } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Users, Calendar, MessageCircle, MapPin, User } from "lucide-react";
+import { Users, Calendar, MessageCircle, MapPin, User, Clock } from "lucide-react";
 
 export default function Community() {
   const discussionGroups = [
@@ -138,8 +138,16 @@ export default function Community() {
                         <div className="flex-1">
                           <h3 className="font-semibold text-lg">{event.title}</h3>
                           <p className="text-sm text-neutral-600 mt-1">{event.description}</p>
-                          <div className="text-sm text-neutral-500 mt-2 flex items-center gap-1">
-                            <MapPin className="h-3 w-3" /> {event.date} at {event.time}
+                          <div className="text-sm text-neutral-500 mt-2 flex items-center gap-2">
+                            <span className="flex items-center gap-1">
+                              <Calendar className="h-3 w-3" /> {event.date}
+                            </span>
+                            <span className="flex items-center gap-1">
+                              <Clock className="h-3 w-3" /> {event.time}
+                            </span>
+                            <span className="flex items-center gap-1">
+                              <MapPin className="h-3 w-3" /> Virtual
+                            </span>
                           </div>
                         </div>
                         <button className="px-4 py-2 bg-brand-500 text-white rounded-md hover:bg-brand-600 transition-colors mt-4 md:mt-0 self-start">
@@ -175,7 +183,8 @@ export default function Community() {
                       <h4 className="font-medium mt-3">
                         {['Jennifer Davis', 'Sarah Brown', 'Michelle Lee', 'Amy Wilson', 'Kate Parker'][index]}
                       </h4>
-                      <p className="text-sm text-neutral-500 mt-1">
+                      <p className="text-sm text-neutral-500 mt-1 flex items-center justify-center gap-1">
+                        <User className="h-3 w-3" />
                         {['Group Lead', 'Therapist', 'Mentor', 'Counselor', 'Peer Support'][index]}
                       </p>
                     </div>

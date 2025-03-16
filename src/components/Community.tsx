@@ -104,7 +104,9 @@ export function Community() {
                               )}
                             </div>
                             <div className="text-sm text-neutral-700">
-                              <div>{session.expert}</div>
+                              <div className="flex items-center gap-1 mb-1">
+                                <User className="h-3 w-3 text-neutral-500" /> {session.expert}
+                              </div>
                               <div className="text-neutral-500 flex items-center gap-1">
                                 <Calendar className="h-3 w-3" /> {session.date}
                               </div>
@@ -123,9 +125,10 @@ export function Community() {
                     href="#"
                     variant="outline"
                     size="md"
-                    className="w-full justify-center"
+                    className="w-full justify-center group"
                   >
                     View All Sessions
+                    <ChevronRight className="h-4 w-4 ml-1 group-hover:translate-x-0.5 transition-transform" />
                   </CtaButton>
                 </div>
               </div>
