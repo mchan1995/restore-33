@@ -9,14 +9,13 @@ export function Assessment() {
   const [age, setAge] = useState("");
   const [focus, setFocus] = useState("pelvic");
   const [history, setHistory] = useState("");
-  const [style, setStyle] = useState("structured");
 
   const [activeField, setActiveField] = useState<string | null>(null);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // In a real app, we would submit the form data to an API
-    console.log({ name, age, focus, history, style });
+    console.log({ name, age, focus, history });
   };
 
   return (
@@ -157,46 +156,6 @@ export function Assessment() {
                       } focus:outline-none transition-all duration-200`}
                       placeholder="Any relevant medical conditions or previous treatments"
                     />
-                  </div>
-                  
-                  {/* Therapy Style */}
-                  <div>
-                    <label className="block text-sm font-medium text-neutral-700 mb-3">
-                      Therapy Style Preference
-                    </label>
-                    <div className="grid grid-cols-1 gap-3">
-                      {[
-                        { id: "structured", label: "Structured Plan", description: "Daily exercises with clear milestones" },
-                        { id: "interactive", label: "Interactive Coaching", description: "Real-time feedback and adjustments" },
-                        { id: "community", label: "Community-Driven", description: "Group support and shared progress" },
-                      ].map((option) => (
-                        <div 
-                          key={option.id}
-                          className={`flex items-center space-x-3 border rounded-lg p-3 cursor-pointer transition-all ${
-                            style === option.id
-                              ? "border-pink-400 bg-pink-50"
-                              : "border-neutral-300 hover:border-pink-300 hover:bg-neutral-50"
-                          }`}
-                          onClick={() => setStyle(option.id)}
-                        >
-                          <div className={`h-5 w-5 rounded-full border flex items-center justify-center ${
-                            style === option.id
-                              ? "bg-pink-500 border-pink-500"
-                              : "border-neutral-400"
-                          }`}>
-                            {style === option.id && <div className="h-2 w-2 rounded-full bg-white" />}
-                          </div>
-                          <div>
-                            <div className={`text-sm font-medium ${
-                              style === option.id ? "text-pink-700" : "text-neutral-700"
-                            }`}>
-                              {option.label}
-                            </div>
-                            <div className="text-xs text-neutral-500">{option.description}</div>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
                   </div>
                   
                   <div className="pt-4">
