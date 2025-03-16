@@ -1,3 +1,4 @@
+
 import { useRef } from "react";
 import { FadeIn, FadeInStagger } from "./FadeIn";
 import { CtaButton } from "./CtaButton";
@@ -167,11 +168,13 @@ export function Community() {
                   }
                 ].map((group, index) => (
                   <div key={index} className="group rounded-xl overflow-hidden border border-neutral-200 hover:border-brand-200 hover:shadow-soft transition-all cursor-pointer">
-                    <img 
-                      src={group.image} 
-                      alt={group.name} 
-                      className="w-full h-32 object-cover"
-                    />
+                    <div className="w-full h-32 overflow-hidden">
+                      <img 
+                        src={group.image} 
+                        alt={group.name} 
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
                     <div className="p-3">
                       <h4 className="text-base font-medium text-neutral-900 group-hover:text-brand-600 transition-colors">
                         {group.name}
