@@ -2,7 +2,7 @@
 import { useRef } from "react";
 import { FadeIn, FadeInStagger } from "./FadeIn";
 import { CtaButton } from "./CtaButton";
-import { ChevronRight, Users, Calendar } from "lucide-react";
+import { ChevronRight, Calendar } from "lucide-react";
 import {
   Carousel,
   CarouselContent,
@@ -34,7 +34,7 @@ export function Community() {
           </FadeIn>
         </div>
         
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+        <div className="max-w-3xl mx-auto">
           {/* Expert Sessions with Video */}
           <FadeIn delay="100ms">
             <div className="bg-white rounded-2xl shadow-soft border border-neutral-100 overflow-hidden h-full flex flex-col">
@@ -126,77 +126,6 @@ export function Community() {
                     View All Sessions
                   </CtaButton>
                 </div>
-              </div>
-            </div>
-          </FadeIn>
-          
-          {/* Community Groups with People */}
-          <FadeIn delay="200ms">
-            <div className="bg-white rounded-2xl shadow-soft border border-neutral-100 overflow-hidden h-full flex flex-col">
-              <div className="p-6 border-b border-neutral-100">
-                <div className="flex items-center gap-3 mb-3">
-                  <div className="h-10 w-10 rounded-full bg-brand-100 flex items-center justify-center">
-                    <Users className="h-5 w-5 text-brand-600" />
-                  </div>
-                  <h3 className="text-xl font-medium text-neutral-900">
-                    New Mom Support Groups
-                  </h3>
-                </div>
-              </div>
-              
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-6">
-                {[
-                  {
-                    name: "C-Section Recovery",
-                    members: 1240,
-                    image: "https://images.unsplash.com/photo-1623854767648-e7bb8009f0db?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80"
-                  },
-                  {
-                    name: "Postpartum Fitness",
-                    members: 968,
-                    image: "https://images.unsplash.com/photo-1518310383802-640c2de311b2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
-                  },
-                  {
-                    name: "Breastfeeding Support",
-                    members: 1485,
-                    image: "/lovable-uploads/a287d260-82f3-4346-8989-e3fca4e038a3.png"
-                  },
-                  {
-                    name: "Mom Mental Health",
-                    members: 823,
-                    image: "https://images.unsplash.com/photo-1623854907747-b23e841dad3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
-                  }
-                ].map((group, index) => (
-                  <div key={index} className="group rounded-xl overflow-hidden border border-neutral-200 hover:border-brand-200 hover:shadow-soft transition-all cursor-pointer">
-                    <div className="w-full h-32 overflow-hidden">
-                      <img 
-                        src={group.image} 
-                        alt={group.name} 
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                    <div className="p-3">
-                      <h4 className="text-base font-medium text-neutral-900 group-hover:text-brand-600 transition-colors">
-                        {group.name}
-                      </h4>
-                      <div className="flex items-center gap-1 text-xs text-neutral-500 mt-1">
-                        <Users className="h-3 w-3" />
-                        <span>{group.members.toLocaleString()} members</span>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-              
-              <div className="p-6 mt-auto">
-                <CtaButton
-                  href="#"
-                  size="md"
-                  className="w-full justify-center"
-                  icon={<ChevronRight className="h-5 w-5" />}
-                >
-                  Join Mom Community
-                </CtaButton>
               </div>
             </div>
           </FadeIn>
