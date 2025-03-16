@@ -4,7 +4,7 @@ import { Navbar } from "@/components/Navbar";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Card } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Users, Calendar, MessageCircle, MapPin, User, Clock } from "lucide-react";
+import { Users, Calendar, MessageCircle, MapPin, Clock } from "lucide-react";
 
 export default function Community() {
   const discussionGroups = [
@@ -12,28 +12,28 @@ export default function Community() {
       title: "Postpartum Depression Support",
       members: 243,
       description: "A safe space to share experiences and coping strategies for postpartum depression.",
-      image: "/placeholder.svg",
+      image: "https://images.unsplash.com/photo-1516062423079-7ca13cdc7f5a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1050&q=80",
       icon: MessageCircle
     },
     {
       title: "Sleep Training Tips",
       members: 187,
       description: "Exchange advice and support for establishing healthy sleep routines for your baby and yourself.",
-      image: "/placeholder.svg",
+      image: "https://images.unsplash.com/photo-1544717305-996b815c338c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1050&q=80",
       icon: Users
     },
     {
       title: "Returning to Work",
       members: 156,
       description: "Navigate the challenges of balancing work and motherhood with support from others on the same journey.",
-      image: "/placeholder.svg",
+      image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1050&q=80",
       icon: Users
     },
     {
       title: "Single Moms Circle",
       members: 124,
       description: "Connect with other single mothers for emotional support and practical advice.",
-      image: "/placeholder.svg",
+      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=1050&q=80",
       icon: Users
     }
   ];
@@ -56,6 +56,39 @@ export default function Community() {
       date: "June 25, 2023",
       time: "3:00 PM EST",
       description: "Welcome session for moms who recently joined our community."
+    }
+  ];
+
+  const communityLeaders = [
+    {
+      name: "Jennifer Davis",
+      role: "Group Lead",
+      image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+      initials: "JD"
+    },
+    {
+      name: "Sarah Brown",
+      role: "Therapist",
+      image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+      initials: "SB"
+    },
+    {
+      name: "Michelle Lee",
+      role: "Mentor",
+      image: "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+      initials: "ML"
+    },
+    {
+      name: "Amy Wilson",
+      role: "Counselor",
+      image: "https://images.unsplash.com/photo-1589571894960-20bbe2828d0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+      initials: "AW"
+    },
+    {
+      name: "Kate Parker",
+      role: "Peer Support",
+      image: "https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+      initials: "KP"
     }
   ];
 
@@ -171,21 +204,17 @@ export default function Community() {
               </div>
 
               <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
-                {Array.from({ length: 5 }).map((_, index) => (
+                {communityLeaders.map((leader, index) => (
                   <FadeIn key={index} delay={`${index * 100}ms`}>
                     <div className="flex flex-col items-center">
                       <Avatar className="w-20 h-20 border-2 border-brand-200">
-                        <AvatarImage src={`/placeholder.svg`} />
-                        <AvatarFallback>
-                          {['JD', 'SB', 'ML', 'AW', 'KP'][index]}
-                        </AvatarFallback>
+                        <AvatarImage src={leader.image} alt={leader.name} />
+                        <AvatarFallback>{leader.initials}</AvatarFallback>
                       </Avatar>
-                      <h4 className="font-medium mt-3">
-                        {['Jennifer Davis', 'Sarah Brown', 'Michelle Lee', 'Amy Wilson', 'Kate Parker'][index]}
-                      </h4>
+                      <h4 className="font-medium mt-3">{leader.name}</h4>
                       <p className="text-sm text-neutral-500 mt-1 flex items-center justify-center gap-1">
-                        <User className="h-3 w-3" />
-                        {['Group Lead', 'Therapist', 'Mentor', 'Counselor', 'Peer Support'][index]}
+                        <Users className="h-3 w-3" />
+                        {leader.role}
                       </p>
                     </div>
                   </FadeIn>
