@@ -24,12 +24,12 @@ export function Community() {
         <div className="text-center mb-16">
           <FadeIn>
             <h2 className="mb-4">
-              <span className="text-gradient">Join Women Like You</span>
+              <span className="text-gradient">Connect With New Moms</span>
             </h2>
           </FadeIn>
           <FadeIn delay="100ms">
             <p className="subtitle mx-auto">
-              Connect with a supportive community on the same journey.
+              Share experiences with other mothers on the same postpartum journey.
             </p>
           </FadeIn>
         </div>
@@ -44,7 +44,7 @@ export function Community() {
                     <Calendar className="h-5 w-5 text-brand-600" />
                   </div>
                   <h3 className="text-xl font-medium text-neutral-900">
-                    Live Expert Sessions
+                    Postpartum Recovery Sessions
                   </h3>
                 </div>
               </div>
@@ -54,9 +54,9 @@ export function Community() {
                   ref={videoRef}
                   className="w-full h-full object-cover"
                   controls
-                  poster="https://images.unsplash.com/photo-1581090700227-1e37b190418e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1050&q=80"
+                  poster="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=1050&q=80"
                 >
-                  <source src="https://cdn.pixabay.com/vimeo/403231789/online-therapy-26732.mp4?width=640&hash=d71cb9bcbfcc87f1e4d7c1142b8f37f9ca6bf7ef" type="video/mp4" />
+                  <source src="https://cdn.pixabay.com/vimeo/695428034/mother-and-baby-136261.mp4?width=640&hash=aacf7e9387a28c86f7fdf9b4ec9f772f1ef14ebd" type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
               </div>
@@ -66,21 +66,21 @@ export function Community() {
                   <CarouselContent>
                     {[
                       {
-                        title: "Postpartum Recovery",
+                        title: "Postpartum Core Recovery",
                         expert: "Dr. Sarah Johnson",
                         date: "Tue, Oct 12",
                         image: "https://images.unsplash.com/photo-1587614382346-4ec70e388b28?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
                       },
                       {
-                        title: "Pelvic Pain Solutions",
-                        expert: "Dr. Michael Chen",
+                        title: "Healing After C-Section",
+                        expert: "Dr. Lisa Wong",
                         date: "Thu, Oct 14",
                         featured: true,
                         image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
                       },
                       {
-                        title: "Core Activation",
-                        expert: "Jessica Miller",
+                        title: "Pelvic Floor Restoration",
+                        expert: "Jessica Miller, PT",
                         date: "Mon, Oct 18",
                         image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
                       },
@@ -139,7 +139,7 @@ export function Community() {
                     <Users className="h-5 w-5 text-brand-600" />
                   </div>
                   <h3 className="text-xl font-medium text-neutral-900">
-                    Peer Support Groups
+                    New Mom Support Groups
                   </h3>
                 </div>
               </div>
@@ -147,22 +147,22 @@ export function Community() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-6">
                 {[
                   {
-                    name: "Postpartum Recovery",
+                    name: "C-Section Recovery",
                     members: 1240,
                     image: "https://images.unsplash.com/photo-1566616213894-2d4e1baee5d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
                   },
                   {
-                    name: "Pelvic Strength",
+                    name: "Postpartum Fitness",
                     members: 968,
                     image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
                   },
                   {
-                    name: "Confidence & Lifestyle",
+                    name: "Breastfeeding Support",
                     members: 1485,
-                    image: "https://images.unsplash.com/photo-1600618528240-fb9fc964b853?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                    image: "https://images.unsplash.com/photo-1590612281741-bc932d9afee9?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
                   },
                   {
-                    name: "Exercise Support",
+                    name: "Mom Mental Health",
                     members: 823,
                     image: "https://images.unsplash.com/photo-1571019613576-2b22c76fd955?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
                   }
@@ -193,7 +193,7 @@ export function Community() {
                   className="w-full justify-center"
                   icon={<ChevronRight className="h-5 w-5" />}
                 >
-                  Join the Community
+                  Join Mom Community
                 </CtaButton>
               </div>
             </div>

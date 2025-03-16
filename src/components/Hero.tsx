@@ -31,7 +31,7 @@ export function Hero() {
           loop 
           playsInline
         >
-          <source src="https://cdn.pixabay.com/vimeo/149379497/physical-therapy-3054.mp4?width=1280&hash=c39f0c68cda2d6cc6a20e4be4257e74c98c53bd2" type="video/mp4" />
+          <source src="https://cdn.pixabay.com/vimeo/744792431/mother-and-baby-144835.mp4?width=1280&hash=da6be9bde2fa1a29d7853cd9f9afac4d5f72c3ca" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
       </div>
@@ -43,19 +43,19 @@ export function Hero() {
             <FadeIn delay="100ms">
               <div className="inline-flex items-center px-3 py-1 rounded-full bg-pink-100 text-pink-700 text-sm font-medium mb-6">
                 <span className="flex h-2 w-2 rounded-full bg-pink-500 mr-2"></span>
-                <span>AI-Powered Therapy</span>
+                <span>Postpartum Recovery</span>
               </div>
             </FadeIn>
             
             <FadeIn delay="200ms">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-neutral-900 mb-6 leading-tight">
-                Stronger Pelvic Health
+                Your Body After Baby
               </h1>
             </FadeIn>
             
             <FadeIn delay="300ms">
               <p className="text-lg md:text-xl text-neutral-600 mb-10">
-                Restore strength and confidence with AI-guided therapy.
+                Rebuild strength with AI-guided therapy designed for new moms.
               </p>
             </FadeIn>
             
@@ -70,7 +70,7 @@ export function Hero() {
                 className="bg-pink-500 hover:bg-pink-600 text-white"
                 icon={<ChevronRight className="h-5 w-5" />}
               >
-                Start Free Assessment
+                Start Mom Assessment
               </CtaButton>
               
               <CtaButton 
@@ -93,11 +93,11 @@ export function Hero() {
                 </div>
                 <div className="text-center border-r border-neutral-200 last:border-r-0">
                   <p className="text-pink-600 text-2xl md:text-3xl font-bold">87%</p>
-                  <p className="text-neutral-600 text-sm mt-1">Symptom Reduction</p>
+                  <p className="text-neutral-600 text-sm mt-1">Recovery Rate</p>
                 </div>
                 <div className="text-center border-r border-neutral-200 last:border-r-0">
                   <p className="text-pink-600 text-2xl md:text-3xl font-bold">3x</p>
-                  <p className="text-neutral-600 text-sm mt-1">Faster Recovery</p>
+                  <p className="text-neutral-600 text-sm mt-1">Faster Healing</p>
                 </div>
               </div>
             </FadeIn>
@@ -123,15 +123,15 @@ export function Hero() {
                   <video 
                     className="w-full h-full object-cover rounded-xl"
                     controls
-                    poster="https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=1050&q=80"
+                    poster="https://images.unsplash.com/photo-1649972904349-6e44c42644a7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1050&q=80"
                   >
-                    <source src="https://cdn.pixabay.com/vimeo/728627215/physical-therapy-142190.mp4?width=1280&hash=1a7f467e8848ffb3b95cb24367a45926f8c02eb0" type="video/mp4" />
+                    <source src="https://cdn.pixabay.com/vimeo/720107275/mother-and-baby-140258.mp4?width=1280&hash=d71e47f1ba9add0b23e09d5c7f5fa07e27fa4b7e" type="video/mp4" />
                     Your browser does not support the video tag.
                   </video>
                   
                   <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/70 to-transparent text-white">
-                    <p className="font-medium">"ReStore changed my life after childbirth"</p>
-                    <p className="text-sm opacity-90">Sarah, 34 - Physical Therapist & Mother</p>
+                    <p className="font-medium">"ReStore helped me feel like myself again after my second baby"</p>
+                    <p className="text-sm opacity-90">Emily, 32 - New mom of two</p>
                   </div>
                 </div>
               </div>

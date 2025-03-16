@@ -10,8 +10,8 @@ export function TherapyPlan() {
   const therapyModules = [
     {
       id: 1,
-      title: "Pelvic Floor Strengthening",
-      description: "Build core strength with targeted exercises and AI feedback on engagement & posture.",
+      title: "Postpartum Pelvic Floor Recovery",
+      description: "Rebuild your core strength with targeted exercises designed specifically for new moms.",
       duration: "15 min",
       level: "Beginner",
       icon: (
@@ -26,8 +26,8 @@ export function TherapyPlan() {
     },
     {
       id: 2,
-      title: "Postural Correction & Core Stability",
-      description: "Prevent pain & improve function with exercises that align your posture and strengthen your core.",
+      title: "C-Section Recovery & Scar Mobilization",
+      description: "Gentle exercises to promote healing and reduce discomfort around your C-section scar.",
       duration: "12 min",
       level: "All Levels",
       icon: (
@@ -43,8 +43,8 @@ export function TherapyPlan() {
     },
     {
       id: 3,
-      title: "Breathwork & Relaxation Techniques",
-      description: "Reduce pelvic tension & improve endurance with guided breathing exercises.",
+      title: "Diastasis Recti Healing",
+      description: "Reconnect your abdominal muscles safely after pregnancy with guided AI feedback.",
       duration: "10 min",
       level: "All Levels",
       icon: (
@@ -66,12 +66,12 @@ export function TherapyPlan() {
         <div className="text-center mb-16">
           <FadeIn>
             <h2 className="mb-4">
-              Real-Time AI Coaching for <span className="text-gradient">Lasting Results</span>
+              AI Coaching for <span className="text-gradient">New Mom Recovery</span>
             </h2>
           </FadeIn>
           <FadeIn delay="100ms">
             <p className="subtitle mx-auto">
-              Based on your assessment, we create a structured, AI-guided therapy plan with real-time feedback and tracking.
+              Based on your postpartum assessment, we create a personalized healing plan for your body.
             </p>
           </FadeIn>
         </div>
@@ -148,10 +148,10 @@ export function TherapyPlan() {
                         <p className="text-sm text-neutral-800 font-medium">AI Coach Feedback:</p>
                         <p className="text-xs text-neutral-600">
                           {index === 0 
-                            ? "Remember to engage deeper here for better results. Try exhaling as you contract."
+                            ? "Start gently and listen to your body. It's normal to feel weak after pregnancy."
                             : index === 1
-                            ? "Keep your shoulders relaxed and spine neutral throughout the movement."
-                            : "Focus on slow, deep breaths. Four counts in, six counts out for optimal relaxation."
+                            ? "Go slow with scar mobilization. Use gentle circular motions around your C-section scar."
+                            : "Focus on proper breathing while gently activating your deep core muscles."
                           }
                         </p>
                       </div>
@@ -167,7 +167,7 @@ export function TherapyPlan() {
                   variant="outline"
                   icon={<ChevronRight className="h-5 w-5" />}
                 >
-                  View All Therapy Exercises
+                  View Full Postpartum Recovery Plan
                 </CtaButton>
               </div>
             </FadeInStagger>
@@ -179,37 +179,37 @@ export function TherapyPlan() {
               <div className="sticky top-24 bg-white rounded-2xl shadow-medium border border-neutral-200 overflow-hidden">
                 <div className="p-6 border-b border-neutral-100">
                   <h3 className="text-xl font-medium text-neutral-900 mb-1">
-                    Real-Time Biofeedback
+                    Your Recovery Progress
                   </h3>
                   <p className="text-neutral-600 text-sm">
-                    Track your progress with AI-generated metrics
+                    Track your postpartum healing journey
                   </p>
                 </div>
                 
                 <div className="p-6 space-y-6">
-                  {/* Pelvic Strength Score */}
+                  {/* Recovery Score */}
                   <div>
                     <div className="flex justify-between items-center mb-2">
-                      <div className="text-sm font-medium text-neutral-900">Pelvic Strength Score</div>
+                      <div className="text-sm font-medium text-neutral-900">Recovery Score</div>
                       <div className="text-2xl font-bold text-brand-600">72<span className="text-sm text-neutral-500">/100</span></div>
                     </div>
                     <div className="h-2 w-full bg-neutral-200 rounded-full overflow-hidden">
                       <div className="h-full bg-brand-500 rounded-full" style={{ width: "72%" }}></div>
                     </div>
                     <div className="mt-1 flex justify-between text-xs text-neutral-500">
-                      <span>Baseline: 48</span>
+                      <span>4 weeks postpartum: 48</span>
                       <span>+24 points improvement</span>
                     </div>
                   </div>
                   
                   {/* Engagement Metrics */}
                   <div className="space-y-3">
-                    <div className="text-sm font-medium text-neutral-900 mb-2">Key Metrics</div>
+                    <div className="text-sm font-medium text-neutral-900 mb-2">Key Recovery Metrics</div>
                     
                     {[
-                      { label: "Muscle Activation", value: 68, improvement: "+12%" },
-                      { label: "Core Stability", value: 75, improvement: "+18%" },
-                      { label: "Movement Quality", value: 82, improvement: "+22%" },
+                      { label: "Pelvic Floor Strength", value: 68, improvement: "+12%" },
+                      { label: "Core Gap Closure", value: 75, improvement: "+18%" },
+                      { label: "Posture Alignment", value: 82, improvement: "+22%" },
                     ].map((metric) => (
                       <div key={metric.label} className="flex items-center gap-4">
                         <div className="w-32 text-sm text-neutral-700">{metric.label}</div>
@@ -253,7 +253,7 @@ export function TherapyPlan() {
                       className="w-full justify-center"
                       icon={<ChevronRight className="h-5 w-5" />}
                     >
-                      Start My First Therapy Session
+                      Start My Recovery Session
                     </CtaButton>
                   </div>
                 </div>
