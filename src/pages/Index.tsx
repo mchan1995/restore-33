@@ -5,6 +5,7 @@ import { Hero } from "@/components/Hero";
 import { Navbar } from "@/components/Navbar";
 import { TherapyPlan } from "@/components/TherapyPlan";
 import { FadeIn } from "@/components/FadeIn";
+import { CtaButton } from "@/components/CtaButton";
 
 const Index = () => {
   return (
@@ -26,24 +27,19 @@ const Index = () => {
                 Let's take the first step together—personalized guidance is just a click away.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a 
+                <CtaButton 
                   href="#assessment" 
-                  className="btn-primary bg-pink-500 hover:bg-pink-600 focus:ring-pink-500"
+                  className="bg-pink-500 hover:bg-pink-600 focus:ring-pink-500"
                 >
-                  Start My AI Pelvic Health Assessment →
-                </a>
-                <a 
-                  href="#" 
-                  className="btn-secondary border-pink-300 text-pink-700 hover:bg-pink-100 hover:border-pink-400"
+                  Start My AI Assessment
+                </CtaButton>
+                <CtaButton 
+                  href="/about" 
+                  variant="outline"
+                  className="border-pink-300 text-pink-700 hover:bg-pink-100 hover:border-pink-400"
                 >
-                  Learn More About Pelvic Health
-                </a>
-                <a 
-                  href="#community" 
-                  className="btn-secondary border-pink-300 text-pink-700 hover:bg-pink-100 hover:border-pink-400"
-                >
-                  Join the Community for Support
-                </a>
+                  Learn More About Us
+                </CtaButton>
               </div>
             </div>
           </section>

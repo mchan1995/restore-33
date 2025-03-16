@@ -1,8 +1,7 @@
-
 import { useEffect, useRef, useState } from "react";
 import { FadeIn, FadeInStagger } from "./FadeIn";
 import { CtaButton } from "./CtaButton";
-import { ChevronRight, Play, UserPlus, BookOpen, Award, GraduationCap, Stethoscope, Building2, Shield } from "lucide-react";
+import { BookOpen, ChevronRight, Play, UserPlus } from "lucide-react";
 
 export function Hero() {
   const videoRef = useRef<HTMLVideoElement | null>(null);
@@ -60,12 +59,12 @@ export function Hero() {
               </CtaButton>
               
               <CtaButton 
-                href="#resources"
+                href="/about"
                 variant="subtle"
                 size="lg"
                 icon={<BookOpen className="h-5 w-5" />}
               >
-                Learn About Pelvic Health
+                Learn About Us
               </CtaButton>
               
               <CtaButton 
