@@ -40,12 +40,7 @@ export function Hero() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           {/* Content - takes 6 columns on large screens */}
           <div className="lg:col-span-5 lg:pr-8">
-            <FadeIn delay="100ms">
-              <div className="inline-flex items-center px-3 py-1 rounded-full bg-purple-100 text-purple-700 text-sm font-medium mb-6">
-                <span className="flex h-2 w-2 rounded-full bg-purple-500 mr-2"></span>
-                <span>Recovery & Wellness Support</span>
-              </div>
-            </FadeIn>
+            {/* Recovery & Wellness Support badge has been removed */}
             
             <FadeIn delay="200ms">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-neutral-900 mb-6 leading-tight">
