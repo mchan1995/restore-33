@@ -7,65 +7,65 @@
 
 @layer base {
   :root {
-    --background: 330 100% 98%;
-    --foreground: 335 47% 11%;
+    --background: 210 50% 98%;
+    --foreground: 222 47% 11%;
 
     --card: 0 0% 100%;
-    --card-foreground: 335 47% 11%;
+    --card-foreground: 222 47% 11%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 335 47% 11%;
+    --popover-foreground: 222 47% 11%;
 
     --primary: 335 100% 60%;
-    --primary-foreground: 330 40% 98%;
+    --primary-foreground: 210 40% 98%;
 
-    --secondary: 335 100% 96%;
-    --secondary-foreground: 335 47% 11%;
+    --secondary: 335 40% 96%;
+    --secondary-foreground: 222 47% 11%;
 
-    --muted: 335 40% 96%;
-    --muted-foreground: 335 16% 46%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 46%;
 
-    --accent: 335 90% 93%;
-    --accent-foreground: 335 47% 11%;
+    --accent: 335 40% 93%;
+    --accent-foreground: 222 47% 11%;
 
     --destructive: 0 84% 60%;
-    --destructive-foreground: 330 40% 98%;
+    --destructive-foreground: 210 40% 98%;
 
-    --border: 335 32% 91%;
-    --input: 335 32% 91%;
-    --ring: 335 93% 63%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 335 83% 53%;
 
     --radius: 0.8rem;
   }
 
   .dark {
-    --background: 335 47% 11%;
-    --foreground: 330 40% 98%;
+    --background: 222 47% 11%;
+    --foreground: 210 40% 98%;
 
-    --card: 335 47% 11%;
-    --card-foreground: 330 40% 98%;
+    --card: 222 47% 11%;
+    --card-foreground: 210 40% 98%;
 
-    --popover: 335 47% 11%;
-    --popover-foreground: 330 40% 98%;
+    --popover: 222 47% 11%;
+    --popover-foreground: 210 40% 98%;
 
     --primary: 335 100% 60%;
-    --primary-foreground: 335 47% 11%;
+    --primary-foreground: 222 47% 11%;
 
-    --secondary: 335 32% 17%;
-    --secondary-foreground: 330 40% 98%;
+    --secondary: 217 32% 17%;
+    --secondary-foreground: 210 40% 98%;
 
-    --muted: 335 32% 17%;
-    --muted-foreground: 335 20% 65%;
+    --muted: 217 32% 17%;
+    --muted-foreground: 215 20% 65%;
 
-    --accent: 335 32% 17%;
-    --accent-foreground: 330 40% 98%;
+    --accent: 217 32% 17%;
+    --accent-foreground: 210 40% 98%;
 
     --destructive: 0 62% 30%;
-    --destructive-foreground: 330 40% 98%;
+    --destructive-foreground: 210 40% 98%;
 
-    --border: 335 32% 17%;
-    --input: 335 32% 17%;
-    --ring: 335 86% 58%;
+    --border: 217 32% 17%;
+    --input: 217 32% 17%;
+    --ring: 335 76% 48%;
   }
 }
 
@@ -81,8 +81,6 @@
 
   body {
     @apply bg-background text-foreground font-sans overflow-x-hidden;
-    background-image: radial-gradient(rgba(255, 182, 255, 0.1) 1px, transparent 0);
-    background-size: 30px 30px;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -92,7 +90,7 @@
 
 @layer components {
   .glass-card {
-    @apply bg-white/80 backdrop-blur-md border border-pink-200/50 shadow-soft;
+    @apply bg-white/80 backdrop-blur-md border border-white/20 shadow-soft;
   }
   
   .section-container {
@@ -111,10 +109,6 @@
     @apply bg-clip-text text-transparent bg-gradient-to-r from-pink-600 to-pink-400;
   }
   
-  .pink-gradient {
-    @apply bg-gradient-to-r from-pink-500 to-pink-300;
-  }
-  
   .card-hover {
     @apply transition-all duration-300 hover:shadow-medium hover:-translate-y-1;
   }
@@ -129,7 +123,7 @@
   
   /* Add Sword Health inspired components */
   .sword-card {
-    @apply bg-white rounded-xl shadow-medium p-6 transition-all duration-300 hover:shadow-hard hover:-translate-y-1 border border-pink-100;
+    @apply bg-white rounded-xl shadow-medium p-6 transition-all duration-300 hover:shadow-hard hover:-translate-y-1;
   }
   
   .sword-button {
@@ -148,11 +142,11 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-pink-300 rounded-full;
+  @apply bg-neutral-300 rounded-full;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  @apply bg-pink-400;
+  @apply bg-neutral-400;
 }
 
 /* Fluid type scale */
@@ -173,7 +167,7 @@ h4 {
 }
 
 .subtitle {
-  @apply text-lg md:text-xl text-pink-700 max-w-3xl;
+  @apply text-lg md:text-xl text-neutral-600 max-w-3xl;
 }
 
 /* Animation utilities */
