@@ -2,7 +2,7 @@
 import { useEffect, useRef, useState } from "react";
 import { FadeIn, FadeInStagger } from "./FadeIn";
 import { CtaButton } from "./CtaButton";
-import { Award, BookOpen, Building2, ChevronRight, GraduationCap, Play, Shield, Stethoscope, UserPlus } from "lucide-react";
+import { BookOpen, ChevronRight, Play, UserPlus } from "lucide-react";
 
 export function Hero() {
   const videoRef = useRef<HTMLVideoElement | null>(null);
@@ -125,49 +125,6 @@ export function Hero() {
             </div>
           </FadeIn>
         </div>
-        
-        {/* Trust indicators */}
-        <FadeIn delay="700ms">
-          <div className="mt-20 pt-10 border-t border-neutral-200">
-            <p className="text-center text-neutral-500 text-sm mb-8">Trusted by healthcare professionals worldwide</p>
-            <div className="flex flex-wrap justify-center items-center gap-x-12 gap-y-8">
-              <div className="text-neutral-700 flex flex-col items-center gap-2">
-                <div className="h-16 w-16 rounded-full bg-neutral-100 flex items-center justify-center shadow-soft">
-                  <Award className="h-8 w-8 text-pink-500" />
-                </div>
-                <span className="text-sm font-medium">APTA</span>
-              </div>
-              
-              <div className="text-neutral-700 flex flex-col items-center gap-2">
-                <div className="h-16 w-16 rounded-full bg-neutral-100 flex items-center justify-center shadow-soft">
-                  <GraduationCap className="h-8 w-8 text-pink-500" />
-                </div>
-                <span className="text-sm font-medium">Herman & Wallace</span>
-              </div>
-              
-              <div className="text-neutral-700 flex flex-col items-center gap-2">
-                <div className="h-16 w-16 rounded-full bg-neutral-100 flex items-center justify-center shadow-soft">
-                  <Shield className="h-8 w-8 text-pink-500" />
-                </div>
-                <span className="text-sm font-medium">Harvard Medical</span>
-              </div>
-              
-              <div className="text-neutral-700 flex flex-col items-center gap-2">
-                <div className="h-16 w-16 rounded-full bg-neutral-100 flex items-center justify-center shadow-soft">
-                  <Stethoscope className="h-8 w-8 text-pink-500" />
-                </div>
-                <span className="text-sm font-medium">Mayo Clinic</span>
-              </div>
-              
-              <div className="text-neutral-700 flex flex-col items-center gap-2">
-                <div className="h-16 w-16 rounded-full bg-neutral-100 flex items-center justify-center shadow-soft">
-                  <Building2 className="h-8 w-8 text-pink-500" />
-                </div>
-                <span className="text-sm font-medium">Cleveland Clinic</span>
-              </div>
-            </div>
-          </div>
-        </FadeIn>
       </div>
     </section>
   );
