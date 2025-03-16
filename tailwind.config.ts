@@ -192,7 +192,22 @@ export default {
 				'none': 'none',
 				'blur': 'blur(8px)',
 			},
+			// Add clip path for hero section
+			clipPath: {
+				'hero': 'polygon(100% 0, 100% 100%, 0 100%, 30% 0)',
+			},
 		}
 	},
-	plugins: [require("tailwindcss-animate")],
+	plugins: [
+		require("tailwindcss-animate"),
+		// Add plugin for clip-path
+		function({ addUtilities }) {
+			const newUtilities = {
+				'.clip-path-hero': {
+					clipPath: 'polygon(100% 0, 100% 100%, 0 100%, 30% 0)',
+				},
+			}
+			addUtilities(newUtilities)
+		}
+	],
 } satisfies Config;

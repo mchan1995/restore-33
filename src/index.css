@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 @tailwind base;
@@ -118,6 +119,15 @@
   
   .btn-secondary {
     @apply inline-flex items-center justify-center rounded-lg bg-white px-5 py-2.5 text-pink-600 font-medium border border-pink-200 transition-all hover:bg-pink-50 hover:border-pink-300 focus:outline-none focus:ring-2 focus:ring-pink-400 focus:ring-offset-2;
+  }
+  
+  /* Add Sword Health inspired components */
+  .sword-card {
+    @apply bg-white rounded-xl shadow-medium p-6 transition-all duration-300 hover:shadow-hard hover:-translate-y-1;
+  }
+  
+  .sword-button {
+    @apply inline-flex items-center justify-center rounded-full bg-pink-500 px-6 py-3 text-white font-medium transition-all hover:bg-pink-600 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-offset-2;
   }
 }
 
