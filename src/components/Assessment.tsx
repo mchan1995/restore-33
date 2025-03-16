@@ -1,21 +1,65 @@
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { FadeIn, FadeInStagger } from "./FadeIn";
 import { CtaButton } from "./CtaButton";
-import { Check, ChevronRight } from "lucide-react";
+import { Check, ChevronRight, Send } from "lucide-react";
+import { Input } from "./ui/input";
+import { Textarea } from "./ui/textarea";
 
 export function Assessment() {
-  const [name, setName] = useState("");
-  const [age, setAge] = useState("");
-  const [focus, setFocus] = useState("pelvic");
-  const [history, setHistory] = useState("");
-
-  const [activeField, setActiveField] = useState<string | null>(null);
-
-  const handleSubmit = (e: React.FormEvent) => {
+  const [messages, setMessages] = useState([
+    {
+      sender: "bot",
+      content: "Hello, I'm Dr. ReStore, a pelvic health specialist. I'm here to help you improve your core strength and mobility. Please tell me about your symptoms in your own words.",
+      timestamp: new Date()
+    }
+  ]);
+  
+  const [inputMessage, setInputMessage] = useState("");
+  const messagesEndRef = useRef<HTMLDivElement>(null);
+  
+  // Auto-scroll to bottom when new messages are added
+  useEffect(() => {
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  }, [messages]);
+  
+  const handleSendMessage = (e: React.FormEvent) => {
     e.preventDefault();
-    // In a real app, we would submit the form data to an API
-    console.log({ name, age, focus, history });
+    
+    if (!inputMessage.trim()) return;
+    
+    // Add user message
+    const userMessage = {
+      sender: "user",
+      content: inputMessage,
+      timestamp: new Date()
+    };
+    
+    setMessages(prev => [...prev, userMessage]);
+    setInputMessage("");
+    
+    // Simulate bot response after a short delay
+    setTimeout(() => {
+      const botResponses = [
+        "Thank you for sharing that. Could you tell me if you've noticed any specific activities that make these symptoms worse?",
+        "I understand how challenging that can be. Have you tried any exercises or treatments to help with these symptoms so far?",
+        "Based on what you've shared, I think we can develop a personalized plan to help strengthen your core. Would you like to schedule a virtual consultation to discuss this further?"
+      ];
+      
+      // Pick a response based on conversation stage
+      const botResponseIndex = Math.min(
+        Math.floor(messages.length / 2),
+        botResponses.length - 1
+      );
+      
+      const botMessage = {
+        sender: "bot",
+        content: botResponses[botResponseIndex],
+        timestamp: new Date()
+      };
+      
+      setMessages(prev => [...prev, botMessage]);
+    }, 1000);
   };
 
   return (
@@ -28,152 +72,76 @@ export function Assessment() {
         <div className="text-center mb-16">
           <FadeIn>
             <h2 className="mb-4">
-              Personalized Therapy, <span className="text-gradient">Designed for You</span>
+              Chat with <span className="text-gradient">Dr. ReStore</span>
             </h2>
           </FadeIn>
           <FadeIn delay="100ms">
             <p className="subtitle mx-auto">
-              Your journey begins with a professional therapist who creates your custom therapy plan. After your initial assessment, you'll continue with AI-supported therapy sessions guided by your therapist's expertise.
+              Share your symptoms in your own words and receive personalized guidance from our pelvic health specialist.
             </p>
           </FadeIn>
         </div>
         
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Assessment Form */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+          {/* Chat Interface */}
           <FadeIn className="w-full">
-            <div className="glass-card rounded-2xl p-8">
-              <form onSubmit={handleSubmit}>
-                <h3 className="text-xl font-medium mb-6">Your Initial Assessment</h3>
-                
-                <div className="space-y-6">
-                  {/* Name & Age */}
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div>
-                      <label htmlFor="name" className="block text-sm font-medium text-neutral-700 mb-1">
-                        Name
-                      </label>
-                      <input
-                        type="text"
-                        id="name"
-                        value={name}
-                        onChange={(e) => setName(e.target.value)}
-                        onFocus={() => setActiveField("name")}
-                        onBlur={() => setActiveField(null)}
-                        className={`w-full px-4 py-2.5 rounded-lg border ${
-                          activeField === "name" 
-                            ? "border-purple-400 ring-1 ring-purple-400" 
-                            : "border-neutral-300"
-                        } focus:outline-none transition-all duration-200`}
-                        placeholder="Your name"
-                      />
-                    </div>
-                    <div>
-                      <label htmlFor="age" className="block text-sm font-medium text-neutral-700 mb-1">
-                        Age
-                      </label>
-                      <input
-                        type="number"
-                        id="age"
-                        value={age}
-                        onChange={(e) => setAge(e.target.value)}
-                        onFocus={() => setActiveField("age")}
-                        onBlur={() => setActiveField(null)}
-                        className={`w-full px-4 py-2.5 rounded-lg border ${
-                          activeField === "age" 
-                            ? "border-purple-400 ring-1 ring-purple-400" 
-                            : "border-neutral-300"
-                        } focus:outline-none transition-all duration-200`}
-                        placeholder="Your age"
-                      />
-                    </div>
-                  </div>
-                  
-                  {/* Primary Focus */}
-                  <div>
-                    <label className="block text-sm font-medium text-neutral-700 mb-3">
-                      Primary Focus
-                    </label>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
-                      {[
-                        { id: "pelvic", label: "Core & Pelvic Health", available: true },
-                        { id: "mobility", label: "Mobility & Strength", available: true },
-                        { id: "recovery", label: "Injury Recovery", available: false },
-                      ].map((option) => (
-                        <button
-                          key={option.id}
-                          type="button"
-                          onClick={() => option.available && setFocus(option.id)}
-                          className={`group relative border rounded-lg p-4 text-left transition-all ${
-                            focus === option.id && option.available
-                              ? "border-purple-400 bg-purple-50"
-                              : option.available
-                              ? "border-neutral-300 hover:border-purple-300 hover:bg-neutral-50"
-                              : "border-neutral-200 bg-neutral-50 cursor-not-allowed"
-                          }`}
-                        >
-                          <div className="flex justify-between items-start">
-                            <span className={`text-sm font-medium ${
-                              focus === option.id && option.available
-                                ? "text-purple-700"
-                                : option.available
-                                ? "text-neutral-700"
-                                : "text-neutral-400"
-                            }`}>
-                              {option.label}
-                            </span>
-                            {focus === option.id && option.available && (
-                              <span className="h-5 w-5 bg-purple-500 rounded-full flex items-center justify-center">
-                                <Check className="h-3 w-3 text-white" />
-                              </span>
-                            )}
-                          </div>
-                          {!option.available && (
-                            <span className="absolute top-0 right-0 translate-x-1/3 -translate-y-1/3 bg-neutral-200 text-neutral-700 text-xs font-medium py-0.5 px-2 rounded-full">
-                              Coming Soon
-                            </span>
-                          )}
-                        </button>
-                      ))}
-                    </div>
-                  </div>
-                  
-                  {/* Medical History */}
-                  <div>
-                    <label htmlFor="history" className="block text-sm font-medium text-neutral-700 mb-1">
-                      Past Medical History <span className="text-neutral-500 font-normal">(Optional)</span>
-                    </label>
-                    <textarea
-                      id="history"
-                      rows={3}
-                      value={history}
-                      onChange={(e) => setHistory(e.target.value)}
-                      onFocus={() => setActiveField("history")}
-                      onBlur={() => setActiveField(null)}
-                      className={`w-full px-4 py-2.5 rounded-lg border ${
-                        activeField === "history" 
-                          ? "border-purple-400 ring-1 ring-purple-400" 
-                          : "border-neutral-300"
-                      } focus:outline-none transition-all duration-200`}
-                      placeholder="Any relevant medical conditions or previous treatments"
-                    />
-                  </div>
-                  
-                  <div className="pt-4">
-                    <CtaButton
-                      type="submit"
-                      size="lg"
-                      className="w-full justify-center bg-purple-600 hover:bg-purple-700 text-white"
-                      icon={<ChevronRight className="h-5 w-5" />}
-                    >
-                      Book Your First Therapist Session
-                    </CtaButton>
-                  </div>
+            <div className="glass-card rounded-2xl p-6 shadow-soft">
+              <div className="flex items-center mb-6">
+                <div className="h-12 w-12 rounded-full bg-purple-100 flex-shrink-0 flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-purple-600">
+                    <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"></path>
+                  </svg>
                 </div>
+                <div className="ml-4">
+                  <h3 className="text-lg font-medium text-neutral-900">Dr. ReStore</h3>
+                  <p className="text-neutral-600 text-sm">Pelvic Health Specialist</p>
+                </div>
+              </div>
+              
+              {/* Chat Messages */}
+              <div className="bg-white rounded-lg p-4 border border-neutral-200 h-80 overflow-y-auto mb-4">
+                {messages.map((message, index) => (
+                  <div 
+                    key={index} 
+                    className={`mb-4 ${message.sender === 'user' ? 'text-right' : ''}`}
+                  >
+                    <div 
+                      className={`inline-block max-w-[80%] rounded-lg px-4 py-2 ${
+                        message.sender === 'user' 
+                          ? 'bg-purple-600 text-white rounded-tr-none' 
+                          : 'bg-neutral-100 text-neutral-800 rounded-tl-none'
+                      }`}
+                    >
+                      {message.content}
+                    </div>
+                    <div className="text-xs text-neutral-500 mt-1">
+                      {message.timestamp.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}
+                    </div>
+                  </div>
+                ))}
+                <div ref={messagesEndRef} />
+              </div>
+              
+              {/* Message Input */}
+              <form onSubmit={handleSendMessage} className="flex gap-2">
+                <Input
+                  value={inputMessage}
+                  onChange={(e) => setInputMessage(e.target.value)}
+                  placeholder="Type your symptoms here..."
+                  className="flex-grow"
+                />
+                <button
+                  type="submit"
+                  className="bg-purple-600 hover:bg-purple-700 text-white rounded-lg p-2 flex items-center justify-center"
+                  disabled={!inputMessage.trim()}
+                >
+                  <Send className="h-5 w-5" />
+                </button>
               </form>
             </div>
           </FadeIn>
           
-          {/* Assessment Benefits */}
+          {/* Benefits */}
           <div>
             <FadeInStagger
               direction="right"
@@ -182,18 +150,8 @@ export function Assessment() {
             >
               {[
                 {
-                  title: "Initial Visit with a Therapist",
-                  description: "Start your journey with a professional therapist who will assess your needs and create a personalized therapy plan.",
-                  icon: (
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-purple-600">
-                      <circle cx="12" cy="12" r="10" />
-                      <polyline points="12 6 12 12 16 14" />
-                    </svg>
-                  ),
-                },
-                {
-                  title: "Personalized Exercise Plan",
-                  description: "Custom therapy program based on your specific needs, goals, and fitness level created by your therapist.",
+                  title: "Personalized Assessment",
+                  description: "Dr. ReStore analyzes your specific symptoms to create a tailored therapy program just for you.",
                   icon: (
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-purple-600">
                       <path d="M16.5 9.4 7.55 4.24" />
@@ -204,8 +162,8 @@ export function Assessment() {
                   ),
                 },
                 {
-                  title: "Follow-up with Therapist + AI",
-                  description: "After your initial session, continue with AI-guided therapy reinforced by periodic check-ins with your therapist.",
+                  title: "Expert Medical Guidance",
+                  description: "Receive evidence-based recommendations from a specialist in pelvic health and core strength.",
                   icon: (
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-purple-600">
                       <path d="M12 7.5a3 3 0 1 0 0 6 3 3 0 1 0 0-6z" />
@@ -221,8 +179,18 @@ export function Assessment() {
                   ),
                 },
                 {
-                  title: "Progress Tracking",
-                  description: "Monitor your improvements with detailed metrics and celebrate your achievements with both AI and your therapist.",
+                  title: "Quick & Private Conversation",
+                  description: "Share your concerns in a secure, confidential environment with no appointment needed.",
+                  icon: (
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-purple-600">
+                      <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                      <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                    </svg>
+                  ),
+                },
+                {
+                  title: "Follow-up Support",
+                  description: "After your initial assessment, receive a customized plan and ongoing guidance for your recovery journey.",
                   icon: (
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-purple-600">
                       <path d="M3 3v18h18" />
