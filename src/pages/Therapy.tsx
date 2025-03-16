@@ -13,12 +13,12 @@ export default function Therapy() {
             <div className="text-center mb-12">
               <FadeIn>
                 <h1 className="text-4xl font-bold mb-4">
-                  <span className="text-gradient">Therapy Plans</span>
+                  <span className="text-gradient">Your Personalized Therapy Plan</span>
                 </h1>
               </FadeIn>
               <FadeIn delay="100ms">
                 <p className="max-w-3xl mx-auto text-lg text-neutral-600">
-                  Personalized therapy plans designed for adults aged 25-40
+                  Track your recovery progress and achieve your pelvic health goals
                 </p>
               </FadeIn>
             </div>
