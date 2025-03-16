@@ -53,10 +53,10 @@ export function Navbar() {
           <div className="flex-shrink-0">
             <a href="#" className="flex items-center gap-2">
               <div className="w-8 h-8 rounded-full bg-brand-500 flex items-center justify-center">
-                <span className="text-white font-bold">W</span>
+                <span className="text-white font-bold">R</span>
               </div>
               <span className="text-neutral-900 font-display text-xl font-semibold">
-                WomenHealth360
+                ReStore
               </span>
             </a>
           </div>
