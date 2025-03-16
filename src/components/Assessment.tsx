@@ -21,8 +21,8 @@ export function Assessment() {
   return (
     <section id="assessment" className="py-24 bg-white relative overflow-hidden">
       {/* Decorative elements */}
-      <div className="absolute -top-40 -right-40 w-80 h-80 bg-pink-50 rounded-full opacity-40 blur-3xl -z-10"></div>
-      <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-pink-50 rounded-full opacity-40 blur-3xl -z-10"></div>
+      <div className="absolute -top-40 -right-40 w-80 h-80 bg-purple-50 rounded-full opacity-40 blur-3xl -z-10"></div>
+      <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-purple-50 rounded-full opacity-40 blur-3xl -z-10"></div>
       
       <div className="section-container">
         <div className="text-center mb-16">
@@ -61,7 +61,7 @@ export function Assessment() {
                         onBlur={() => setActiveField(null)}
                         className={`w-full px-4 py-2.5 rounded-lg border ${
                           activeField === "name" 
-                            ? "border-pink-400 ring-1 ring-pink-400" 
+                            ? "border-purple-400 ring-1 ring-purple-400" 
                             : "border-neutral-300"
                         } focus:outline-none transition-all duration-200`}
                         placeholder="Your name"
@@ -80,7 +80,7 @@ export function Assessment() {
                         onBlur={() => setActiveField(null)}
                         className={`w-full px-4 py-2.5 rounded-lg border ${
                           activeField === "age" 
-                            ? "border-pink-400 ring-1 ring-pink-400" 
+                            ? "border-purple-400 ring-1 ring-purple-400" 
                             : "border-neutral-300"
                         } focus:outline-none transition-all duration-200`}
                         placeholder="Your age"
@@ -95,9 +95,9 @@ export function Assessment() {
                     </label>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
                       {[
-                        { id: "pelvic", label: "Pelvic Health", available: true },
-                        { id: "menopause", label: "Menopause Support", available: false },
-                        { id: "mobility", label: "Mobility & Bone Health", available: false },
+                        { id: "pelvic", label: "Core & Pelvic Health", available: true },
+                        { id: "mobility", label: "Mobility & Strength", available: true },
+                        { id: "recovery", label: "Injury Recovery", available: false },
                       ].map((option) => (
                         <button
                           key={option.id}
@@ -105,16 +105,16 @@ export function Assessment() {
                           onClick={() => option.available && setFocus(option.id)}
                           className={`group relative border rounded-lg p-4 text-left transition-all ${
                             focus === option.id && option.available
-                              ? "border-pink-400 bg-pink-50"
+                              ? "border-purple-400 bg-purple-50"
                               : option.available
-                              ? "border-neutral-300 hover:border-pink-300 hover:bg-neutral-50"
+                              ? "border-neutral-300 hover:border-purple-300 hover:bg-neutral-50"
                               : "border-neutral-200 bg-neutral-50 cursor-not-allowed"
                           }`}
                         >
                           <div className="flex justify-between items-start">
                             <span className={`text-sm font-medium ${
                               focus === option.id && option.available
-                                ? "text-pink-700"
+                                ? "text-purple-700"
                                 : option.available
                                 ? "text-neutral-700"
                                 : "text-neutral-400"
@@ -122,7 +122,7 @@ export function Assessment() {
                               {option.label}
                             </span>
                             {focus === option.id && option.available && (
-                              <span className="h-5 w-5 bg-pink-500 rounded-full flex items-center justify-center">
+                              <span className="h-5 w-5 bg-purple-500 rounded-full flex items-center justify-center">
                                 <Check className="h-3 w-3 text-white" />
                               </span>
                             )}
@@ -151,7 +151,7 @@ export function Assessment() {
                       onBlur={() => setActiveField(null)}
                       className={`w-full px-4 py-2.5 rounded-lg border ${
                         activeField === "history" 
-                          ? "border-pink-400 ring-1 ring-pink-400" 
+                          ? "border-purple-400 ring-1 ring-purple-400" 
                           : "border-neutral-300"
                       } focus:outline-none transition-all duration-200`}
                       placeholder="Any relevant medical conditions or previous treatments"
@@ -162,7 +162,7 @@ export function Assessment() {
                     <CtaButton
                       type="submit"
                       size="lg"
-                      className="w-full justify-center"
+                      className="w-full justify-center bg-purple-600 hover:bg-purple-700 text-white"
                       icon={<ChevronRight className="h-5 w-5" />}
                     >
                       Book Your First Therapist Session
@@ -185,7 +185,7 @@ export function Assessment() {
                   title: "Initial Visit with a Therapist",
                   description: "Start your journey with a professional therapist who will assess your needs and create a personalized therapy plan.",
                   icon: (
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-pink-600">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-purple-600">
                       <circle cx="12" cy="12" r="10" />
                       <polyline points="12 6 12 12 16 14" />
                     </svg>
@@ -195,7 +195,7 @@ export function Assessment() {
                   title: "Personalized Exercise Plan",
                   description: "Custom therapy program based on your specific needs, goals, and fitness level created by your therapist.",
                   icon: (
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-pink-600">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-purple-600">
                       <path d="M16.5 9.4 7.55 4.24" />
                       <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
                       <polyline points="3.29 7 12 12 20.71 7" />
@@ -207,7 +207,7 @@ export function Assessment() {
                   title: "Follow-up with Therapist + AI",
                   description: "After your initial session, continue with AI-guided therapy reinforced by periodic check-ins with your therapist.",
                   icon: (
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-pink-600">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-purple-600">
                       <path d="M12 7.5a3 3 0 1 0 0 6 3 3 0 1 0 0-6z" />
                       <path d="M12 2v2" />
                       <path d="M12 20v2" />
@@ -224,15 +224,15 @@ export function Assessment() {
                   title: "Progress Tracking",
                   description: "Monitor your improvements with detailed metrics and celebrate your achievements with both AI and your therapist.",
                   icon: (
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-pink-600">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-purple-600">
                       <path d="M3 3v18h18" />
                       <path d="m19 9-5 5-4-4-3 3" />
                     </svg>
                   ),
                 },
               ].map((benefit, index) => (
-                <div key={index} className="flex gap-4 p-4 rounded-xl hover:bg-pink-50 transition-colors">
-                  <div className="h-12 w-12 rounded-full bg-pink-100 flex-shrink-0 flex items-center justify-center">
+                <div key={index} className="flex gap-4 p-4 rounded-xl hover:bg-purple-50 transition-colors">
+                  <div className="h-12 w-12 rounded-full bg-purple-100 flex-shrink-0 flex items-center justify-center">
                     {benefit.icon}
                   </div>
                   <div>

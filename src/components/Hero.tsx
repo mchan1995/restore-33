@@ -19,7 +19,7 @@ export function Hero() {
   return (
     <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-white">
       {/* Background shape */}
-      <div className="absolute top-0 right-0 w-full md:w-7/12 h-full bg-pink-50 clip-path-hero -z-10"></div>
+      <div className="absolute top-0 right-0 w-full md:w-7/12 h-full bg-purple-50 clip-path-hero -z-10"></div>
       
       {/* Full-width background video with overlay */}
       <div className="absolute inset-0 w-full h-full overflow-hidden -z-5">
@@ -41,21 +41,21 @@ export function Hero() {
           {/* Content - takes 6 columns on large screens */}
           <div className="lg:col-span-5 lg:pr-8">
             <FadeIn delay="100ms">
-              <div className="inline-flex items-center px-3 py-1 rounded-full bg-pink-100 text-pink-700 text-sm font-medium mb-6">
-                <span className="flex h-2 w-2 rounded-full bg-pink-500 mr-2"></span>
-                <span>Mom Recovery Support</span>
+              <div className="inline-flex items-center px-3 py-1 rounded-full bg-purple-100 text-purple-700 text-sm font-medium mb-6">
+                <span className="flex h-2 w-2 rounded-full bg-purple-500 mr-2"></span>
+                <span>Recovery & Wellness Support</span>
               </div>
             </FadeIn>
             
             <FadeIn delay="200ms">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-neutral-900 mb-6 leading-tight">
-                Rebuild Your Strength
+                Rebuild Your Core Strength
               </h1>
             </FadeIn>
             
             <FadeIn delay="300ms">
               <p className="text-lg md:text-xl text-neutral-600 mb-10">
-                Rebuild strength with AI-guided therapy designed for new moms.
+                Regain physical confidence with AI-guided therapy designed for your body's unique needs.
               </p>
             </FadeIn>
             
@@ -67,17 +67,17 @@ export function Hero() {
               <CtaButton 
                 href="#assessment"
                 size="lg"
-                className="bg-pink-500 hover:bg-pink-600 text-white"
+                className="bg-purple-600 hover:bg-purple-700 text-white"
                 icon={<ChevronRight className="h-5 w-5" />}
               >
-                Start Mom Assessment
+                Start Your Assessment
               </CtaButton>
               
               <CtaButton 
                 href="/about"
                 variant="outline"
                 size="lg"
-                className="border-pink-300 text-pink-700 hover:bg-pink-100 hover:border-pink-400"
+                className="border-purple-300 text-purple-700 hover:bg-purple-100 hover:border-purple-400"
                 icon={<BookOpen className="h-5 w-5" />}
               >
                 About Us
@@ -88,15 +88,15 @@ export function Hero() {
             <FadeIn delay="500ms">
               <div className="mt-12 grid grid-cols-3 gap-4">
                 <div className="text-center border-r border-neutral-200 last:border-r-0">
-                  <p className="text-pink-600 text-2xl md:text-3xl font-bold">94%</p>
+                  <p className="text-purple-600 text-2xl md:text-3xl font-bold">94%</p>
                   <p className="text-neutral-600 text-sm mt-1">Pain Relief</p>
                 </div>
                 <div className="text-center border-r border-neutral-200 last:border-r-0">
-                  <p className="text-pink-600 text-2xl md:text-3xl font-bold">87%</p>
+                  <p className="text-purple-600 text-2xl md:text-3xl font-bold">87%</p>
                   <p className="text-neutral-600 text-sm mt-1">Recovery Rate</p>
                 </div>
                 <div className="text-center border-r border-neutral-200 last:border-r-0">
-                  <p className="text-pink-600 text-2xl md:text-3xl font-bold">3x</p>
+                  <p className="text-purple-600 text-2xl md:text-3xl font-bold">3x</p>
                   <p className="text-neutral-600 text-sm mt-1">Faster Healing</p>
                 </div>
               </div>
@@ -106,12 +106,12 @@ export function Hero() {
           {/* Video Testimonial Element - takes 7 columns on large screens */}
           <div className="lg:col-span-7">
             <FadeIn delay="600ms" className="relative rounded-xl overflow-hidden">
-              <div className="aspect-video relative bg-gradient-to-br from-pink-50 to-neutral-100 rounded-xl overflow-hidden shadow-medium">
+              <div className="aspect-video relative bg-gradient-to-br from-purple-50 to-neutral-100 rounded-xl overflow-hidden shadow-medium">
                 {/* Video Placeholder */}
                 <div className={`absolute inset-0 flex items-center justify-center transition-opacity duration-500 ${isVideoLoaded ? 'opacity-0' : 'opacity-100'}`}>
                   <div className="animate-pulse flex items-center justify-center">
-                    <div className="h-16 w-16 rounded-full bg-pink-200 flex items-center justify-center">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-pink-600">
+                    <div className="h-16 w-16 rounded-full bg-purple-200 flex items-center justify-center">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-purple-600">
                         <polygon points="5 3 19 12 5 21 5 3"></polygon>
                       </svg>
                     </div>
@@ -130,8 +130,8 @@ export function Hero() {
                   </video>
                   
                   <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/70 to-transparent text-white">
-                    <p className="font-medium">"ReStore helped me feel like myself again after my second baby"</p>
-                    <p className="text-sm opacity-90">Emily, 32 - New mom of two</p>
+                    <p className="font-medium">"ReStore helped me rebuild my core strength and feel confident again"</p>
+                    <p className="text-sm opacity-90">Emily, 32 - Active professional</p>
                   </div>
                 </div>
               </div>
