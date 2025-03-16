@@ -149,7 +149,7 @@ export function Community() {
                   {
                     name: "C-Section Recovery",
                     members: 1240,
-                    image: "https://images.unsplash.com/photo-1566616213894-2d4e1baee5d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                    image: "https://images.unsplash.com/photo-1541516160071-4bb0c5af65ba?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80"
                   },
                   {
                     name: "Postpartum Fitness",
