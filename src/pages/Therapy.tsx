@@ -18,7 +18,7 @@ export default function Therapy() {
               </FadeIn>
               <FadeIn delay="100ms">
                 <p className="max-w-3xl mx-auto text-lg text-neutral-600">
-                  Personalized therapy plans designed for your unique postpartum recovery journey
+                  Personalized therapy plans designed for adults aged 25-40
                 </p>
               </FadeIn>
             </div>

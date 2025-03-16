@@ -10,8 +10,8 @@ export function TherapyPlan() {
   const therapyModules = [
     {
       id: 1,
-      title: "Postpartum Pelvic Floor Recovery",
-      description: "Rebuild your core strength with targeted exercises designed specifically for new moms.",
+      title: "Pelvic Floor Strengthening",
+      description: "Rebuild your core strength with targeted exercises designed for adults aged 25-40.",
       duration: "15 min",
       level: "Beginner",
       icon: (
@@ -26,8 +26,8 @@ export function TherapyPlan() {
     },
     {
       id: 2,
-      title: "C-Section Recovery & Scar Mobilization",
-      description: "Gentle exercises to promote healing and reduce discomfort around your C-section scar.",
+      title: "Recovery & Scar Mobilization",
+      description: "Gentle exercises to promote healing and reduce discomfort around surgical or injury scars.",
       duration: "12 min",
       level: "All Levels",
       icon: (
@@ -43,8 +43,8 @@ export function TherapyPlan() {
     },
     {
       id: 3,
-      title: "Diastasis Recti Healing",
-      description: "Reconnect your abdominal muscles safely after pregnancy with guided AI feedback.",
+      title: "Core Rehabilitation",
+      description: "Reconnect and strengthen your abdominal muscles safely with guided AI feedback.",
       duration: "10 min",
       level: "All Levels",
       icon: (
@@ -66,12 +66,12 @@ export function TherapyPlan() {
         <div className="text-center mb-16">
           <FadeIn>
             <h2 className="mb-4">
-              AI Coaching for <span className="text-gradient">New Mom Recovery</span>
+              AI Coaching for <span className="text-gradient">Physical Recovery</span>
             </h2>
           </FadeIn>
           <FadeIn delay="100ms">
             <p className="subtitle mx-auto">
-              Based on your postpartum assessment, we create a personalized healing plan for your body.
+              Based on your assessment, we create a personalized healing plan for adults aged 25-40.
             </p>
           </FadeIn>
         </div>
@@ -148,9 +148,9 @@ export function TherapyPlan() {
                         <p className="text-sm text-neutral-800 font-medium">AI Coach Feedback:</p>
                         <p className="text-xs text-neutral-600">
                           {index === 0 
-                            ? "Start gently and listen to your body. It's normal to feel weak after pregnancy."
+                            ? "Start gently and listen to your body. Focus on form rather than intensity."
                             : index === 1
-                            ? "Go slow with scar mobilization. Use gentle circular motions around your C-section scar."
+                            ? "Go slow with scar mobilization. Use gentle circular motions around the affected area."
                             : "Focus on proper breathing while gently activating your deep core muscles."
                           }
                         </p>
@@ -167,7 +167,7 @@ export function TherapyPlan() {
                   variant="outline"
                   icon={<ChevronRight className="h-5 w-5" />}
                 >
-                  View Full Postpartum Recovery Plan
+                  View Full Recovery Plan
                 </CtaButton>
               </div>
             </FadeInStagger>
@@ -182,7 +182,7 @@ export function TherapyPlan() {
                     Your Recovery Progress
                   </h3>
                   <p className="text-neutral-600 text-sm">
-                    Track your postpartum healing journey
+                    Track your healing journey
                   </p>
                 </div>
                 
@@ -197,7 +197,7 @@ export function TherapyPlan() {
                       <div className="h-full bg-brand-500 rounded-full" style={{ width: "72%" }}></div>
                     </div>
                     <div className="mt-1 flex justify-between text-xs text-neutral-500">
-                      <span>4 weeks postpartum: 48</span>
+                      <span>4 weeks: 48</span>
                       <span>+24 points improvement</span>
                     </div>
                   </div>
@@ -207,8 +207,8 @@ export function TherapyPlan() {
                     <div className="text-sm font-medium text-neutral-900 mb-2">Key Recovery Metrics</div>
                     
                     {[
-                      { label: "Pelvic Floor Strength", value: 68, improvement: "+12%" },
-                      { label: "Core Gap Closure", value: 75, improvement: "+18%" },
+                      { label: "Core Strength", value: 68, improvement: "+12%" },
+                      { label: "Muscle Definition", value: 75, improvement: "+18%" },
                       { label: "Posture Alignment", value: 82, improvement: "+22%" },
                     ].map((metric) => (
                       <div key={metric.label} className="flex items-center gap-4">
