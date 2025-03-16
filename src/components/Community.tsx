@@ -54,7 +54,7 @@ export function Community() {
                   ref={videoRef}
                   className="w-full h-full object-cover"
                   controls
-                  poster="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=1050&q=80"
+                  poster="https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?ixlib=rb-4.0.3&auto=format&fit=crop&w=1050&q=80"
                 >
                   <source src="https://cdn.pixabay.com/vimeo/695428034/mother-and-baby-136261.mp4?width=640&hash=aacf7e9387a28c86f7fdf9b4ec9f772f1ef14ebd" type="video/mp4" />
                   Your browser does not support the video tag.
@@ -69,14 +69,14 @@ export function Community() {
                         title: "Postpartum Core Recovery",
                         expert: "Dr. Sarah Johnson",
                         date: "Tue, Oct 12",
-                        image: "https://images.unsplash.com/photo-1587614382346-4ec70e388b28?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                        image: "https://images.unsplash.com/photo-1516062423079-7ca13cdc7f5a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
                       },
                       {
                         title: "Healing After C-Section",
                         expert: "Dr. Lisa Wong",
                         date: "Thu, Oct 14",
                         featured: true,
-                        image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                        image: "https://images.unsplash.com/photo-1544717305-996b815c338c?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
                       },
                       {
                         title: "Pelvic Floor Restoration",
@@ -149,22 +149,22 @@ export function Community() {
                   {
                     name: "C-Section Recovery",
                     members: 1240,
-                    image: "https://images.unsplash.com/photo-1541516160071-4bb0c5af65ba?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80"
+                    image: "https://images.unsplash.com/photo-1623854767648-e7bb8009f0db?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80"
                   },
                   {
                     name: "Postpartum Fitness",
                     members: 968,
-                    image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                    image: "https://images.unsplash.com/photo-1518310383802-640c2de311b2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
                   },
                   {
                     name: "Breastfeeding Support",
                     members: 1485,
-                    image: "/lovable-uploads/28ec62ae-ff02-44e1-9bcc-69501920ba10.png"
+                    image: "/lovable-uploads/a287d260-82f3-4346-8989-e3fca4e038a3.png"
                   },
                   {
                     name: "Mom Mental Health",
                     members: 823,
-                    image: "https://images.unsplash.com/photo-1571019613576-2b22c76fd955?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                    image: "https://images.unsplash.com/photo-1623854907747-b23e841dad3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
                   }
                 ].map((group, index) => (
                   <div key={index} className="group rounded-xl overflow-hidden border border-neutral-200 hover:border-brand-200 hover:shadow-soft transition-all cursor-pointer">
