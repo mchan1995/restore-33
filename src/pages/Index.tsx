@@ -8,7 +8,7 @@ import { FadeIn } from "@/components/FadeIn";
 
 const Index = () => {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg-gradient-to-b from-pink-50 to-white">
       <Navbar />
       <main>
         <Hero />
@@ -16,7 +16,7 @@ const Index = () => {
         <TherapyPlan />
         <Community />
         <FadeIn>
-          <section id="cta" className="py-16 bg-brand-50">
+          <section id="cta" className="py-16 bg-pink-50">
             <div className="section-container text-center">
               <h2 className="mb-4">Your Journey to Pelvic Health Starts Today</h2>
               <p className="subtitle mx-auto mb-8">
@@ -46,10 +46,10 @@ const Index = () => {
           </section>
         </FadeIn>
       </main>
-      <footer className="bg-neutral-100 py-8">
+      <footer className="bg-pink-100/50 py-8">
         <div className="section-container">
           <div className="text-center text-neutral-500 text-sm">
-            <p>© 2024 WomenHealth360. All rights reserved.</p>
+            <p>© 2024 ReStore. All rights reserved.</p>
             <p className="mt-2">AI-Powered Pelvic Health Therapy</p>
           </div>
         </div>

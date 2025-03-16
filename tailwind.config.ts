@@ -90,6 +90,20 @@ export default {
 					900: "#0f172a",
 					950: "#020617",
 				},
+				// New pink color palette for ReStore
+				"pink": {
+					50: "#fff0f6",
+					100: "#ffe5ee",
+					200: "#ffc2d4",
+					300: "#ff8fb0",
+					400: "#ff548c",
+					500: "#f72f67",
+					600: "#df1557",
+					700: "#bd0f4a",
+					800: "#9c1140",
+					900: "#82133a",
+					950: "#500720",
+				},
 			},
 			fontFamily: {
 				sans: ["Inter", "system-ui", "sans-serif"],
