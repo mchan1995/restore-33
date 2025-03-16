@@ -8,7 +8,7 @@ import { FadeIn } from "@/components/FadeIn";
 
 const Index = () => {
   return (
-    <div className="min-h-screen flex flex-col bg-gradient-to-b from-pink-50 to-white">
+    <div className="min-h-screen flex flex-col bg-gradient-to-b from-pink-100 to-white">
       <Navbar />
       <main>
         <Hero />
