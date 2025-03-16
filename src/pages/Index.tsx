@@ -49,7 +49,7 @@ const Index = () => {
       <footer className="bg-pink-100/50 py-8">
         <div className="section-container">
           <div className="text-center text-neutral-500 text-sm">
-            <p>© 2024 ReStore. All rights reserved.</p>
+            <p>© 2025 ReStore. All rights reserved.</p>
             <p className="mt-2">AI-Powered Pelvic Health Therapy</p>
           </div>
         </div>
