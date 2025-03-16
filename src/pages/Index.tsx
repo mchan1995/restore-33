@@ -19,7 +19,7 @@ export default function Index() {
       </main>
       <footer className="bg-neutral-900 py-12 text-neutral-400 text-sm text-center">
         <div className="max-w-7xl mx-auto px-4">
-          <p>© 2023 ReStore. All rights reserved.</p>
+          <p>© 2025 ReStore. All rights reserved.</p>
         </div>
       </footer>
     </div>
