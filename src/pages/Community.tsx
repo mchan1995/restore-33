@@ -4,7 +4,7 @@ import { Navbar } from "@/components/Navbar";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Card } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Users, Calendar, MessageCircle, MapPin } from "lucide-react";
+import { Users, Calendar, MessageCircle, MapPin, User } from "lucide-react";
 
 export default function Community() {
   const discussionGroups = [
@@ -73,7 +73,7 @@ export default function Community() {
               </FadeIn>
               <FadeIn delay="100ms">
                 <p className="max-w-3xl mx-auto text-lg text-neutral-600">
-                  Connect with other moms on similar recovery journeys
+                  Connect with others on similar recovery journeys
                 </p>
               </FadeIn>
             </div>

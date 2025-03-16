@@ -2,7 +2,7 @@
 import { useRef } from "react";
 import { FadeIn, FadeInStagger } from "./FadeIn";
 import { CtaButton } from "./CtaButton";
-import { ChevronRight, Calendar } from "lucide-react";
+import { ChevronRight, Calendar, Users, MessageCircle } from "lucide-react";
 import {
   Carousel,
   CarouselContent,
@@ -24,12 +24,12 @@ export function Community() {
         <div className="text-center mb-16">
           <FadeIn>
             <h2 className="mb-4">
-              <span className="text-gradient">Connect With New Moms</span>
+              <span className="text-gradient">Connect With Others</span>
             </h2>
           </FadeIn>
           <FadeIn delay="100ms">
             <p className="subtitle mx-auto">
-              Share experiences with other mothers on the same postpartum journey.
+              Share experiences with others on the same recovery journey.
             </p>
           </FadeIn>
         </div>
@@ -44,7 +44,7 @@ export function Community() {
                     <Calendar className="h-5 w-5 text-brand-600" />
                   </div>
                   <h3 className="text-xl font-medium text-neutral-900">
-                    Postpartum Recovery Sessions
+                    Recovery Sessions
                   </h3>
                 </div>
               </div>
@@ -66,13 +66,13 @@ export function Community() {
                   <CarouselContent>
                     {[
                       {
-                        title: "Postpartum Core Recovery",
+                        title: "Core Recovery",
                         expert: "Dr. Sarah Johnson",
                         date: "Tue, Oct 12",
                         image: "https://images.unsplash.com/photo-1516062423079-7ca13cdc7f5a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
                       },
                       {
-                        title: "Healing After C-Section",
+                        title: "Healing After Surgery",
                         expert: "Dr. Lisa Wong",
                         date: "Thu, Oct 14",
                         featured: true,
@@ -105,7 +105,9 @@ export function Community() {
                             </div>
                             <div className="text-sm text-neutral-700">
                               <div>{session.expert}</div>
-                              <div className="text-neutral-500">{session.date}</div>
+                              <div className="text-neutral-500 flex items-center gap-1">
+                                <Calendar className="h-3 w-3" /> {session.date}
+                              </div>
                             </div>
                           </div>
                         </div>
