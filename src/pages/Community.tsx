@@ -4,6 +4,7 @@ import { Navbar } from "@/components/Navbar";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Card } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Users, Calendar, MessageCircle, MapPin } from "lucide-react";
 
 export default function Community() {
   const discussionGroups = [
@@ -11,25 +12,29 @@ export default function Community() {
       title: "Postpartum Depression Support",
       members: 243,
       description: "A safe space to share experiences and coping strategies for postpartum depression.",
-      image: "/placeholder.svg"
+      image: "/placeholder.svg",
+      icon: MessageCircle
     },
     {
       title: "Sleep Training Tips",
       members: 187,
       description: "Exchange advice and support for establishing healthy sleep routines for your baby and yourself.",
-      image: "/placeholder.svg"
+      image: "/placeholder.svg",
+      icon: Users
     },
     {
       title: "Returning to Work",
       members: 156,
       description: "Navigate the challenges of balancing work and motherhood with support from others on the same journey.",
-      image: "/placeholder.svg"
+      image: "/placeholder.svg",
+      icon: Users
     },
     {
       title: "Single Moms Circle",
       members: 124,
       description: "Connect with other single mothers for emotional support and practical advice.",
-      image: "/placeholder.svg"
+      image: "/placeholder.svg",
+      icon: Users
     }
   ];
 
@@ -75,8 +80,14 @@ export default function Community() {
             
             <Tabs defaultValue="groups" className="w-full">
               <TabsList className="grid w-full max-w-md mx-auto grid-cols-2 mb-8">
-                <TabsTrigger value="groups">Discussion Groups</TabsTrigger>
-                <TabsTrigger value="events">Upcoming Events</TabsTrigger>
+                <TabsTrigger value="groups" className="flex items-center gap-2">
+                  <Users className="h-4 w-4" />
+                  Discussion Groups
+                </TabsTrigger>
+                <TabsTrigger value="events" className="flex items-center gap-2">
+                  <Calendar className="h-4 w-4" />
+                  Upcoming Events
+                </TabsTrigger>
               </TabsList>
 
               <TabsContent value="groups" className="space-y-8">
@@ -92,10 +103,17 @@ export default function Community() {
                           />
                         </div>
                         <div className="p-5">
-                          <h3 className="font-semibold text-lg mb-2">{group.title}</h3>
+                          <div className="flex items-center gap-2 mb-3">
+                            <div className="bg-brand-50 p-2 rounded-full">
+                              <group.icon className="h-5 w-5 text-brand-600" />
+                            </div>
+                            <h3 className="font-semibold text-lg">{group.title}</h3>
+                          </div>
                           <p className="text-sm text-neutral-600 mb-4">{group.description}</p>
                           <div className="flex items-center justify-between">
-                            <span className="text-sm text-neutral-500">{group.members} members</span>
+                            <span className="text-sm text-neutral-500 flex items-center gap-1">
+                              <Users className="h-3 w-3" /> {group.members} members
+                            </span>
                             <button className="text-sm font-medium text-brand-600 hover:text-brand-700">
                               Join Group
                             </button>
@@ -113,14 +131,15 @@ export default function Community() {
                     <Card className="overflow-hidden hover:shadow-md transition-shadow">
                       <div className="p-5 flex flex-col md:flex-row md:items-center gap-4">
                         <div className="shrink-0 flex flex-col items-center justify-center bg-brand-50 text-brand-600 rounded-lg p-3 w-20 h-20">
+                          <Calendar className="h-5 w-5 mb-1" />
                           <span className="font-semibold">{event.date.split(',')[0]}</span>
                           <span className="text-sm">{event.time.split(' ')[0]}</span>
                         </div>
                         <div className="flex-1">
                           <h3 className="font-semibold text-lg">{event.title}</h3>
                           <p className="text-sm text-neutral-600 mt-1">{event.description}</p>
-                          <div className="text-sm text-neutral-500 mt-2">
-                            {event.date} at {event.time}
+                          <div className="text-sm text-neutral-500 mt-2 flex items-center gap-1">
+                            <MapPin className="h-3 w-3" /> {event.date} at {event.time}
                           </div>
                         </div>
                         <button className="px-4 py-2 bg-brand-500 text-white rounded-md hover:bg-brand-600 transition-colors mt-4 md:mt-0 self-start">
