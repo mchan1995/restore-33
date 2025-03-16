@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -63,19 +62,18 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Custom color scheme
 				"brand": {
-					50: "#f0f7ff",
-					100: "#e0f0ff",
-					200: "#baddff",
-					300: "#7dbeff",
-					400: "#3b9fff",
-					500: "#1a8bff",
-					600: "#0071f5",
-					700: "#0059cc",
-					800: "#004aa3",
-					900: "#003c86",
-					950: "#00275a",
+					50: "#fff0fb",
+					100: "#ffe5f8",
+					200: "#ffc2e9",
+					300: "#ff8fd5",
+					400: "#ff54b8",
+					500: "#ff2f9c",
+					600: "#df1580",
+					700: "#bd0f69",
+					800: "#9c1158",
+					900: "#82134c",
+					950: "#500728",
 				},
 				"neutral": {
 					50: "#f8fafc",
@@ -90,19 +88,18 @@ export default {
 					900: "#0f172a",
 					950: "#020617",
 				},
-				// New pink color palette for ReStore
 				"pink": {
-					50: "#fff0f6",
-					100: "#ffe5ee",
-					200: "#ffc2d4",
-					300: "#ff8fb0",
-					400: "#ff548c",
-					500: "#f72f67",
-					600: "#df1557",
-					700: "#bd0f4a",
-					800: "#9c1140",
-					900: "#82133a",
-					950: "#500720",
+					50: "#fff0f8",
+					100: "#ffe5f0",
+					200: "#ffc2e0",
+					300: "#ff8fc6",
+					400: "#ff54a2",
+					500: "#ff2f84",
+					600: "#f51570",
+					700: "#d1005b",
+					800: "#af004e",
+					900: "#8c0040",
+					950: "#55002b",
 				},
 			},
 			fontFamily: {
@@ -192,7 +189,6 @@ export default {
 				'none': 'none',
 				'blur': 'blur(8px)',
 			},
-			// Add clip path for hero section
 			clipPath: {
 				'hero': 'polygon(100% 0, 100% 100%, 0 100%, 30% 0)',
 			},
@@ -200,7 +196,6 @@ export default {
 	},
 	plugins: [
 		require("tailwindcss-animate"),
-		// Add plugin for clip-path
 		function({ addUtilities }) {
 			const newUtilities = {
 				'.clip-path-hero': {
