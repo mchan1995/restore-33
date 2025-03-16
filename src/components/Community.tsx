@@ -105,7 +105,7 @@ export function Community() {
                             </div>
                             <div className="text-sm text-neutral-700">
                               <div className="flex items-center gap-1 mb-1">
-                                <User className="h-3 w-3 text-neutral-500" /> {session.expert}
+                                <Users className="h-3 w-3 text-neutral-500" /> {session.expert}
                               </div>
                               <div className="text-neutral-500 flex items-center gap-1">
                                 <Calendar className="h-3 w-3" /> {session.date}
