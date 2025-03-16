@@ -43,13 +43,13 @@ export function Hero() {
             <FadeIn delay="100ms">
               <div className="inline-flex items-center px-3 py-1 rounded-full bg-pink-100 text-pink-700 text-sm font-medium mb-6">
                 <span className="flex h-2 w-2 rounded-full bg-pink-500 mr-2"></span>
-                <span>Postpartum Recovery</span>
+                <span>Mom Recovery Support</span>
               </div>
             </FadeIn>
             
             <FadeIn delay="200ms">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-neutral-900 mb-6 leading-tight">
-                Your Body After Baby
+                Rebuild Your Strength
               </h1>
             </FadeIn>
             
