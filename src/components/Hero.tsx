@@ -1,7 +1,8 @@
+
 import { useEffect, useRef, useState } from "react";
 import { FadeIn, FadeInStagger } from "./FadeIn";
 import { CtaButton } from "./CtaButton";
-import { BookOpen, ChevronRight, Play, UserPlus } from "lucide-react";
+import { Award, BookOpen, Building2, ChevronRight, GraduationCap, Play, Shield, Stethoscope, UserPlus } from "lucide-react";
 
 export function Hero() {
   const videoRef = useRef<HTMLVideoElement | null>(null);
